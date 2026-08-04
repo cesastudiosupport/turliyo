@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turliyo Gizlilik Politikası</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07080b;
+      --panel: #11141a;
+      --panel-2: #171b23;
+      --text: #f6f7fb;
+      --muted: #a8afbc;
+      --line: rgba(255,255,255,.12);
+      --red: #ff3b4f;
+      --blue: #35b7ff;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(53,183,255,.22), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(255,59,79,.2), transparent 26%),
+        linear-gradient(180deg, #050609 0%, #0b0d12 52%, #07080b 100%);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 70%);
+    }
+    main {
+      position: relative;
+      width: min(940px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(17,20,26,.96), rgba(23,27,35,.9));
+      box-shadow: 0 24px 70px rgba(0,0,0,.42);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -72px;
+      top: -62px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 28px solid rgba(53,183,255,.2);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.08), 0 0 0 22px rgba(255,59,79,.08);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid var(--blue);
+      position: relative;
+      box-shadow: 0 0 22px rgba(53,183,255,.42);
+    }
+    .mark::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 4px;
+      width: 4px;
+      height: 24px;
+      border-radius: 99px;
+      background: var(--white);
+      transform: rotate(42deg);
+      transform-origin: 50% 14px;
+    }
+    .mark::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      bottom: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+    h1 {
+      max-width: 640px;
+      margin: 28px 0 10px;
+      font-size: clamp(34px, 7vw, 62px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .tagline {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .date {
+      display: inline-flex;
+      margin-top: 24px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      color: #d8dde7;
+      background: rgba(255,255,255,.06);
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .pill {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+      color: #e9edf5;
+      font-weight: 700;
+      text-align: center;
+    }
+    section {
+      margin-top: 16px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(17,20,26,.84);
+      box-shadow: 0 14px 36px rgba(0,0,0,.24);
+    }
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+    h2::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 18px rgba(53,183,255,.6);
+      flex: 0 0 auto;
+    }
+    section:nth-of-type(2n) h2::before { background: var(--red); box-shadow: 0 0 18px rgba(255,59,79,.58); }
+    p { margin: 0; color: #d9dee8; }
+    p + p { margin-top: 10px; }
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+      margin-top: 24px;
+    }
+    @media (max-width: 720px) {
+      main { width: min(100% - 20px, 940px); padding-top: 10px; }
+      .hero { padding: 24px; border-radius: 20px; min-height: 230px; }
+      .hero::after { width: 220px; height: 220px; right: -86px; top: -54px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 20px; border-radius: 16px; }
+      .tagline { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="brand"><span class="mark" aria-hidden="true"></span><span>Turliyo</span></div>
+    <h1>Gizlilik Politikası</h1>
+    <p class="tagline">Dönerse senindir, dönmezse yandın. Verilerin ise cihazında kalır.</p>
+    <div class="date">Son güncelleme: 4 Ağustos 2026</div>
+  </header>
+
+  <div class="grid" aria-label="Kısa özet">
+    <div class="pill">Hesap gerekmez</div>
+    <div class="pill">Veriler yerel saklanır</div>
+    <div class="pill">Canlı reklam yok</div>
+  </div>
+
+  <section>
+    <h2>Genel Bilgi</h2>
+    <p>Turliyo, refleks ve zamanlama üzerine kurulu bir mobil oyundur. Bu politika, Turliyo'nun kullanıcı verilerini nasıl ele aldığını açıklar.</p>
+  </section>
+
+  <section>
+    <h2>Toplanan Veriler</h2>
+    <p>Mevcut sürümde Turliyo hesap oluşturma gerektirmez. Oyuncu adı, skorlar, Tıkır, can, sezon ilerlemesi, oyun ayarları ve koleksiyon tercihleri cihaz üzerinde yerel olarak saklanır. Bu bilgiler geliştirici sunucusuna gönderilmez.</p>
+  </section>
+
+  <section>
+    <h2>Paylaşım Özelliği</h2>
+    <p>Oyuncu isterse skor kartını cihazın paylaşım menüsüyle paylaşabilir. Paylaşım işlemi kullanıcının kendi seçimiyle gerçekleşir. Turliyo paylaşım hedefini veya paylaşım sonrasındaki kullanımı kontrol etmez.</p>
+  </section>
+
+  <section>
+    <h2>Reklamlar</h2>
+    <p>Mevcut sürümde canlı reklam SDK'sı bulunmamaktadır. Turliyo'ya reklam eklendiğinde Google AdMob veya benzeri reklam sağlayıcıları kullanılabilir. Reklam sağlayıcıları reklam göstermek, reklam performansını ölçmek ve kötüye kullanımı önlemek için cihaz tanımlayıcıları gibi verileri işleyebilir. Reklam entegrasyonu canlıya alınmadan önce bu politika güncellenecektir.</p>
+  </section>
+
+  <section>
+    <h2>Satın Almalar</h2>
+    <p>Mevcut sürümde canlı uygulama içi satın alma altyapısı bulunmamaktadır. Turliyo'ya uygulama içi satın alma eklendiğinde ödeme işlemleri Google Play Billing üzerinden yürütülür. Turliyo ödeme kartı bilgilerini toplamaz veya saklamaz.</p>
+  </section>
+
+  <section>
+    <h2>Verilerin Saklanması</h2>
+    <p>Yerel oyun verileri kullanıcının cihazında saklanır. Uygulama silindiğinde bu veriler de cihazdan kaldırılabilir. Otomatik Android yedekleme bu uygulama için kapalıdır.</p>
+  </section>
+
+  <section>
+    <h2>Çocuklar</h2>
+    <p>Turliyo genel kitleye yönelik bir oyundur. Çocuklara özel olarak kişisel veri toplamayı hedeflemez. Play Console hedef kitle ayarları yayın öncesinde doğru şekilde doldurulmalıdır.</p>
+  </section>
+
+  <section>
+    <h2>İletişim</h2>
+    <p>Gizlilik ile ilgili sorular için geliştirici iletişim adresi Play Store listelemesinde belirtilecektir.</p>
+  </section>
+
+  <p class="footer">Turliyo | Gizlilik Politikası</p>
+</main>
+</body>
+</html>
